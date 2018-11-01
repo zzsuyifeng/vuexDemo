@@ -60,7 +60,15 @@ export default {
     },
     // 删除该商品
     deleteGoodsAction(item){
-        this.$store.commit('deleteGoodsToGoodsList',item);
+        // this.$store.commit('deleteGoodsToGoodsList',item);
+        
+        // 以载荷形式分发
+        // this.$store.dispatch('deleteGoods',item);
+        // 以对象形势进行分发
+        this.$store.dispatch({
+          type: 'deleteGoods',
+          item: item
+        })
     }
   }
 };
